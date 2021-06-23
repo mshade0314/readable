@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Readable
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var items = new Item[]
+            {
+                new Item() { Title = "fantome", ItemType = ItemTypes.Album},
+                new Item() { Title = "finally", ItemType = ItemTypes.Album},
+                new Item() { Title = "ダンケルク", ItemType = ItemTypes.DVD}
+            };
+
+            var calculator = new FeeCalculator();
+            var totalFee = calculator.Calculate("12345678", items);
+            Console.WriteLine($"合計金額は{totalFee:C}円です");
+            Console.ReadLine();
+        }
+    }
+}
